@@ -1,0 +1,61 @@
+/* FC Barcelona Theme */
+
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #004D98, #A50044);
+    margin: 20px;
+    color: #fff;
+}
+
+/* Headings */
+h2 {
+    color: #EDBB00; /* Barcelona gold */
+    margin-bottom: 15px;
+}
+
+/* Table styling */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+table th, table td {
+    border: 1px solid #EDBB00;
+    padding: 10px;
+    text-align: left;
+    color: #fff;
+}
+
+table th {
+    background-color: #A50044; /* Claret */
+    color: #EDBB00; /* Gold */
+}
+
+table tr:nth-child(even) {
+    background-color: rgba(0,77,152,0.4); /* Blue tint */
+}
+
+/* Navigation bar */
+nav {
+    background-color: #004D98; /* Blue */
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+nav a {
+    color: #EDBB00; /* Gold */
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #A50044; /* Claret */
+    text-decoration: underline;
+}
+
