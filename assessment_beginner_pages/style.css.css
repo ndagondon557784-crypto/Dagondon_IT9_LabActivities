@@ -1,0 +1,85 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap');
+
+/* Global styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #A7C6ED; /* Cool/Powdery Blue */
+  margin: 0;
+  padding: 0;
+  color: #191970; /* Deep Navy for text */
+}
+
+/* Navigation bar */
+nav {
+  background-color: #0D3B66; /* Midnight Blue */
+  padding: 15px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+nav a:hover {
+  color: #87CEEB; /* Sky Blue hover effect */
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #191970; /* Deep Navy */
+}
+
+/* Forms */
+form {
+  background-color: #B6D0E2; /* Powdery Blue background */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(25, 25, 112, 0.2);
+}
+label {
+  font-weight: bold;
+  color: #0D3B66;
+}
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #5B7C99; /* Slate Blue border */
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Buttons */
+button {
+  background-color: #2A52BE; /* Cerulean Blue */
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #40B5AD; /* Teal/Cyan-Blue hover */
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+th, td {
+  border: 1px solid #5B7C99; /* Slate Blue */
+  padding: 10px;
+  text-align: left;
+}
+th {
+  background-color: #0D3B66; /* Midnight Blue */
+  color: #fff;
+}
+tr:nth-child(even) {
+  background-color: #E6F0FA; /* very light blue for alternating rows */
+}
