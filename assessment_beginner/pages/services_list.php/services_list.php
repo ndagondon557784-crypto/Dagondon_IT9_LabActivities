@@ -1,21 +1,37 @@
 <?php
 include "../db.php";
-include "../nav.php";
-
-$result = mysqli_query($conn, "SELECT * FROM services");
+$result = mysqli_query($conn, "SELECT * FROM services ORDER BY service_id DESC");
 ?>
-<h2>Services List</h2>
-<table border="1" cellpadding="5">
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Services</title></head>
+<body>
+<?php include "../nav.php"; ?>
+
+<h2>Services</h2>
+
+<!-- Add New Service link -->
+<p><a href="services_add.php">➕ Add New Service</a></p>
+
+<table border="1" cellpadding="8">
+  <tr>
+    <th>ID</th><th>Name</th><th>Rate</th><th>Active</th><th>Action</th>
+  </tr>
+  <?php while($row = mysqli_fetch_assoc($result)) { ?>
     <tr>
-        <th>ID</th><th>Service</th><th>Description</th><th>Rate</th><th>Status</th>
+      <td><?php echo $row['service_id']; ?></td>
+      <td><?php echo $row['service_name']; ?></td>
+      <td>₱<?php echo number_format($row['hourly_rate'],2); ?></td>
+      <td><?php echo $row['is_active'] ? "Yes" : "No"; ?></td>
+      <td>
+        <a href="services_edit.php?id=<?php echo $row['service_id']; ?>">Edit</a> | 
+        <a href="services_delete.php?id=<?php echo $row['service_id']; ?>" 
+           onclick="return confirm('Are you sure you want to delete this service?');">
+           Delete
+        </a>
+      </td>
     </tr>
-    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-    <tr>
-        <td><?= $row['service_id'] ?></td>
-        <td><?= $row['service_name'] ?></td>
-        <td><?= $row['description'] ?></td>
-        <td><?= $row['hourly_rate'] ?></td>
-        <td><?= $row['is_active'] ? 'Active' : 'Inactive' ?></td>
-    </tr>
-    <?php } ?>
+  <?php } ?>
 </table>
+</body>
+</html>
