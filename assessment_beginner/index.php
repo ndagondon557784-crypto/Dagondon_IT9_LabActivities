@@ -1,38 +1,28 @@
 <?php
-include "db.php";
-include "nav.php";
+session_start();
 
-$clients = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS c FROM clients"))['c'];
-$services = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS c FROM services"))['c'];
-$bookings = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS c FROM bookings"))['c'];
-
-$revRow = mysqli_fetch_assoc(mysqli_query($conn, "SELECT IFNULL(SUM(amount_paid),0) AS s FROM payments"));
-$revenue = $revRow['s'];
+// If not logged in, redirect to login
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Dashboard</title>
-  <!-- ✅ Correct CSS link for root files -->
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <title>Dashboard</title>
 </head>
 <body>
 
-<h2>Dashboard</h2>
+<?php include "nav.php"; ?>
 
-<ul>
-  <li>Total Clients: <b><?php echo $clients; ?></b></li>
-  <li>Total Services: <b><?php echo $services; ?></b></li>
-  <li>Total Bookings: <b><?php echo $bookings; ?></b></li>
-  <li>Total Revenue: <b>₱<?php echo number_format($revenue,2); ?></b></li>
-</ul>
+<h1>Dashboard</h1>
 
-<p>
-  Quick links:
-  <a href="pages/clients_add.php">Add Client</a> |
-  <a href="pages/bookings_create.php">Create Booking</a>
-</p>
+<!-- Welcome message -->
+<h2>Welcome, <?php echo $_SESSION['username']; ?>!</h2>
+
+<p>This is your protected dashboard. Only logged-in users can see this page.</p>
 
 </body>
 </html>

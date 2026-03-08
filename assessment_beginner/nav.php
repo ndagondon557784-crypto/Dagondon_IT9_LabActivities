@@ -8,5 +8,6 @@
   <a href="pages/bookings_list.php">Bookings</a>
   <a href="pages/tools_list_assign.php">Tools</a>
   <a href="pages/payments_list.php">Payments</a>
+  <a href="logout.php">Logout</a>
 </nav>
 <hr>
